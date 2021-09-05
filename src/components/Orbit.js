@@ -17,7 +17,7 @@ const Orbit = () => {
   //
   useFrame((state, delta) => {
     let t = state.clock.getElapsedTime() * 0.5;
-    lineRef.current.rotation.x = t + Math.PI * 0.002;
+    // lineRef.current.rotation.x = t + Math.PI * 0.002;
   })
   
   //

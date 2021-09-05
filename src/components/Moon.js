@@ -12,11 +12,11 @@ const Moon = ({planet}) => {
   //
   useFrame((state, delta) => {
   
-    let t = state.clock.getElapsedTime() * 0.5/4;
+    let t = state.clock.getElapsedTime() * 0.5;
   
     moonRef.current.position.set(Math.cos(t), 0, -Math.sin(t)).multiplyScalar(planet.orbitRadius);
-    moonRef.current.rotation.y = t - Math.PI * 0.25;
-    moonRef.current.rotation.z = Math.PI * 0.25;
+    moonRef.current.rotation.y = t - Math.PI * 0.5;
+    moonRef.current.rotation.z = Math.PI * 0.5;
   })
   
   //
