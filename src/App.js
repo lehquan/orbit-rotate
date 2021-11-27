@@ -29,28 +29,21 @@ function Bloom({ children }) {
 }
 
 function Main({ children }) {
-  console.log(children)
-  const scene = useRef()
-  const { gl, camera } = useThree()
+  console.log(children);
+  const scene = useRef();
+  const { gl, camera } = useThree();
   useFrame(() => {
-    gl.autoClear = false
-    gl.clearDepth()
+    gl.autoClear = false;
+    gl.clearDepth();
     gl.render(scene.current, camera)
-  }, 2)
+  }, 2);
   return <scene ref={scene}>{children}</scene>
 }
 
 export default function App() {
   return (
-      <Canvas
-          linear
-          style={{ background: '#171717' }}
-          camera={{ position: [0, 50, 200], fov: 60 }}
-          gl={{ antialias: true }}
-          onCreated={({ gl }) => {
-            gl.outputEncoding = THREE.sRGBEncoding;
-            // gl.setClearColor(0x404040);
-          }}>
+      <Canvas linear dpr={[1, 2]} gl={{ preserveDrawingBuffer: true, antialias: true }} camera={{ fov: 60, position: [0, 50, 200] }}>
+        {/*<color attach="background" args={['#fb0a66']} />*/}
         <CameraControls/>
         {/*<gridHelper args={[200, 10]}/>*/}
         <Main>

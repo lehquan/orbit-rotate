@@ -28,7 +28,7 @@ const Moon = ({planet}) => {
         </mesh>*/}
         <mesh ref={moonRef}>
           <sphereBufferGeometry args={[5, 32, 16]}/>
-          <meshStandardMaterial color="white" roughness={1}/>
+          <meshStandardMaterial color="#0040ff" roughness={1}/>
         </mesh>
       </>
       
